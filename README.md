@@ -30,3 +30,7 @@ Rules:
             - Flee
             
                 - Player flees the battle.
+                
+
+Example:
+![Example](https://github.com/dmug1/project-monster/blob/master/Example_monster.gif) 
