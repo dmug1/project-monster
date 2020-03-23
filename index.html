@@ -40,7 +40,18 @@
             <div v-else class="lose"> You have been defeated by the Monster! Better luck next time!</div>
         </div>
 
-        <div class="panel buttons">3</div>
+        <div class="panel buttons">
+            <template v-if="running">
+                <button class="btn attack">Attack</button>
+                <button class="btn special-attack">Special Attack</button>
+                <button class="btn heal">Heal</button>
+                <button class="btn give-up">Flee</button>
+            </template>
+            <template v-else>
+                <button class="btn new-game">Start</button>
+            </template>
+        </div>
+
         <div class="panel logs">4</div>
 
     </div>

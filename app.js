@@ -3,6 +3,7 @@ new Vue ({
     data: {
         playerLife: 0,
         monsterLife: 100,
+        running: false,
 
     },
     computed:{
