@@ -17,7 +17,7 @@ new Vue ({
             this.running = true;
             this.playerLife = 100;
             this.monsterLife = 100;
-            this.log = [];
+            this.logs = [];
         },
         attack(special){
             /*this.hurt('playerLife',7,12,false)       */
@@ -37,11 +37,12 @@ new Vue ({
         },
         heal(min, max){
            const heal = this.getRandom(min, max);
-           setTimeout(() => this.playerLife = Math.min(this.playerLife + heal, 100),500);
+           this.playerLife = Math.min(this.playerLife + heal, 100);
+           this.logRegister(`Player casts Healing powers, recovered ${heal}HP`,'playerCls') 
         },
         healAndHurt(){
             this.heal(10, 15);            
-            this.hurt('playerLife',7,12,false)
+            setTimeout(() => this.hurt('playerLife',7,12,false,'Monster','Player','monsterCls'),500)
         },
         getRandom(min, max){
             const value = Math.random() * (max-min) + min

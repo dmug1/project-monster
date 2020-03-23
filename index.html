@@ -51,6 +51,7 @@
 
                 <button @click="healAndHurt"
                 class="btn heal">Heal</button>
+
                 <button class="btn give-up" @click="running = false">Flee</button>
             </template>
             <template v-else>
@@ -59,7 +60,12 @@
         </div>
 
         <div  v-if="logs.length" class="panel logs">
-        
+            <ul>
+                <li 
+                v-for="log in logs"
+                :class="log.cls"
+                class="log">{{ log.text }}</li>
+            </ul>
         </div>
 
     </div>
