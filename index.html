@@ -49,7 +49,8 @@
                 <button  @click="attack(true)"
                 class="btn special-attack">Special Attack</button>
 
-                <button class="btn heal">Heal</button>
+                <button @click="healAndHurt"
+                class="btn heal">Heal</button>
                 <button class="btn give-up" @click="running = false">Flee</button>
             </template>
             <template v-else>
